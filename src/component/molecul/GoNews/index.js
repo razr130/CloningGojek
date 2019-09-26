@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 
 
-const GoNews = () => {
+const GoNews = ({onPress}) => {
     return (
         <View style={{ marginHorizontal: 20, marginVertical: 20, borderBottomColor: '#eeeeee', borderBottomWidth: 1, paddingBottom: 20 }}>
 
@@ -13,7 +13,7 @@ const GoNews = () => {
             <View>
                 <Text style={{ fontWeight: 'bold', marginTop: 10, fontSize: 15, color: '#1a1a1a' }}>Ash Win Alolan League</Text>
                 <Text style={{ color: '#7a7a7a', marginTop: 4, fontSize: 12, fontWeight: '500' }}>After 20 years struggling, now finally.</Text>
-                <TouchableOpacity style={{
+                <TouchableOpacity onPress={onPress} style={{
                     backgroundColor: '#61a756',
                     borderRadius: 7,
                     padding: 10,

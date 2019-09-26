@@ -6,7 +6,7 @@ import { View, Image, TextInput, SafeAreaView } from 'react-native';
 const SearchBar = () => {
     return (
 
-        <SafeAreaView style={{ marginTop: 20, flexDirection: 'row' }}>
+        <SafeAreaView style={{ marginTop: 20, flexDirection: 'row', backgroundColor: 'white' }}>
             <View style={{ position: 'relative', marginEnd: 0, flex: 1 }}>
                 <TextInput placeholder="What do you want to eat ? " style={{
                     borderWidth: 1,
