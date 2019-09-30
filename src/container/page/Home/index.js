@@ -7,20 +7,6 @@ import BottomNavBar from '../../../container/organism/BottomNav';
 import GoPay from '../../../container/organism/GoPay';
 import MainFeatureOrganism from '../../../container/organism/MainFeature';
 
-const DATA = [
-    {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
-    },
-    {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-  ];
 
 class Home extends Component {
 
@@ -54,6 +40,7 @@ class Home extends Component {
           });
       }
 
+      
     render() {
         return (
             <View style={{
@@ -65,7 +52,6 @@ class Home extends Component {
                     <GoPay />
                     <MainFeatureOrganism />
                     <View style={{ backgroundColor: '#eeeeee', height: 10, marginTop: 20 }}></View>
-                    {/* <GoNews newstitle="Fucking ash" onPress={() => this.props.navigation.navigate('NewsDetail')} /> */}
                     <FlatList
                          data={this.state.dataSource}
                          renderItem={this.renderItem}
@@ -73,7 +59,6 @@ class Home extends Component {
                     />
                     <NearbyGoFood />
                 </ScrollView>
-                <BottomNavBar />
             </View>
         );
     }

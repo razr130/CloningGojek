@@ -1,20 +1,48 @@
+import React from 'react';
+import { Image } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { Home, NewsDetail } from '../../container/page';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Home, NewsDetail, Login, Register, Orders } from '../../container/page';
 
-const AppNavigator = createStackNavigator(
+const TabNavigator = createBottomTabNavigator(
     {
         Home: {
             screen: Home,
         },
-        NewsDetail: {
-            screen: NewsDetail,
-        }
+       
+        Orders: {
+            screen: Orders,
+        },
     },
-    {
-        headerMode: "none",
-        initialRouteName: "Home"
+    { 
+        
+        defaultNavigationOptions: ({ navigation }) => ({
+            tabBarIcon: ({ focused }) => {
+                const { routeName } = navigation.state;
+                if(routeName == "Home") {
+                    return(
+                        <Image style={{width: 27, height: 27}} 
+                        source={ focused ? require('../../assets/icon/home-active.png') : 
+                        require('../../assets/icon/home.png')} />
+                    )
+                }
+                else{
+                    return(
+                        <Image style={{width: 27, height: 27}} 
+                        source={ focused ? require('../../assets/icon/order-active.png') : 
+                        require('../../assets/icon/order.png')} />
+                    )
+                }
+            }
+        }),
+        tabBarOptions: {
+            activeTintColor: '#61a756',
+            inactiveTintColor: '#7a7a7a'
+        }
     }
 );
 
-export default createAppContainer(AppNavigator);
+
+
+export default createAppContainer(TabNavigator);
