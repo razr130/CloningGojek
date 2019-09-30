@@ -14,7 +14,7 @@ const NearbyFood = (props) => {
                                 borderRadius: 10
                             }} />
                         </View>
-                        <Text style={{ fontWeight: 'bold', color: '#1c1c1c', fontSize: 12, marginTop: 5 }}>{props.foodtitle}</Text>
+                        <Text style={{ fontWeight: 'bold', color: '#1c1c1c', fontSize: 12, marginVertical: 10 }}>{props.foodtitle}</Text>
                     </View>
     )
 }

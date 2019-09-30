@@ -52,11 +52,7 @@ class Home extends Component {
                     <GoPay />
                     <MainFeatureOrganism />
                     <View style={{ backgroundColor: '#eeeeee', height: 10, marginTop: 20 }}></View>
-                    <FlatList
-                         data={this.state.dataSource}
-                         renderItem={this.renderItem}
-                         keyExtractor={item => item.title}
-                    />
+                  
                     <NearbyGoFood />
                 </ScrollView>
             </View>

@@ -6,7 +6,7 @@ import NearbyFood from '../../../component/molecul/NearbyGoFood';
 class NearbyGoFood extends Component {
     render() {
         return (
-            <View style={{ marginHorizontal: 20 }}>
+            <View style={{ marginHorizontal: 20, marginTop: 20 }}>
                 <View style={{ marginBottom: 10 }}>
                     <Image source={require('../../../assets/logo/go-food.png')} />
                 </View>
