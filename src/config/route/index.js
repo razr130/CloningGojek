@@ -5,18 +5,17 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Home, NewsDetail, Login, Register, Orders } from '../../container/page';
 
+
+
+
 const TabNavigator = createBottomTabNavigator(
-    {
+    {     
         Home: {
             screen: Home,
         },
-       
-        Orders: {
-            screen: Orders,
-        },
+        Orders: Orders,     
     },
-    { 
-        
+    {     
         defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused }) => {
                 const { routeName } = navigation.state;
@@ -43,6 +42,32 @@ const TabNavigator = createBottomTabNavigator(
     }
 );
 
+const OrderStack = createStackNavigator ({
+    Tabs: { screen: TabNavigator,
+    navigationOptions: {
+        title: 'GOJEK',
+        headerBackTitle: null,
+        headerStyle: {
+            backgroundColor: '#61a756',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+    }},
+    NewsDetail: { screen: NewsDetail,
+        navigationOptions: {
+            title: 'Detail',
+            headerStyle: {
+                backgroundColor: '#61a756',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+        }}
+})
 
 
-export default createAppContainer(TabNavigator);
+
+export default createAppContainer(OrderStack);

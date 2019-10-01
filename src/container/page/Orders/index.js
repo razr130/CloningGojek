@@ -15,26 +15,26 @@ class Orders extends Component {
 
     renderItem = ({ item }) => {
         return (
-            <GoNews newstitle={item.title} newsimage={item.thumbnail_image_name} onPress={() => this.props.navigation.navigate('NewsDetail')} />
+            <GoNews newstitle={item.title} newsimage={item.thumbnail_image_name} pressed={() => this.props.navigation.navigate("NewsDetail")} />
         )
     }
-
-    componentDidMount() {
+    componentDidMount(){
         return fetch('https://s3-us-west-2.amazonaws.com/youtubeassets/home.json')
-            .then((response) => response.json())
-            .then((responseJson) => {
-
-                this.setState({
-                    dataSource: responseJson,
-                }, function () {
-
-                });
-
-            })
-            .catch((error) => {
-                console.error(error);
+          .then((response) => response.json())
+          .then((responseJson) => {
+    
+            this.setState({
+              dataSource: responseJson,
+            }, function(){
+    
             });
-    }
+    
+          })
+          .catch((error) =>{
+            console.error(error);
+          });
+      }
+
     render() {
         return (
             <View style={{

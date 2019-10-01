@@ -9,37 +9,7 @@ import MainFeatureOrganism from '../../../container/organism/MainFeature';
 
 
 class Home extends Component {
-
-    constructor() {
-        super();
-        this.state = {
-            dataSource: []
-        }
-    }
-
-    renderItem = ({item}) => {
-        return(
-            <GoNews newstitle={item.title} newsimage={item.thumbnail_image_name} onPress={() => this.props.navigation.navigate('NewsDetail')} />
-        )
-    }
-
-    componentDidMount(){
-        return fetch('https://s3-us-west-2.amazonaws.com/youtubeassets/home.json')
-          .then((response) => response.json())
-          .then((responseJson) => {
     
-            this.setState({
-              dataSource: responseJson,
-            }, function(){
-    
-            });
-    
-          })
-          .catch((error) =>{
-            console.error(error);
-          });
-      }
-
       
     render() {
         return (
@@ -52,7 +22,6 @@ class Home extends Component {
                     <GoPay />
                     <MainFeatureOrganism />
                     <View style={{ backgroundColor: '#eeeeee', height: 10, marginTop: 20 }}></View>
-                  
                     <NearbyGoFood />
                 </ScrollView>
             </View>
